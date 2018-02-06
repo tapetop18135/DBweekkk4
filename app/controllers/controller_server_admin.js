@@ -35,14 +35,34 @@ var controllerAdmin = function(){
             res.send(result);
         })
     }
-
+    this.addTranscript = (req,res) => {
+        var obj = req.body;
+        var stu_id = obj.stu_id_tran
+        var sub_id = obj.sub_id_tran
+        var year = obj.year
+        var semester = obj.semester
+        var gpa = obj.gpa
+        db.insert("transcripts",stu_id,sub_id,year,semester,gpa,'null',(err,table_name) => {
+            if(table_name == undefined){
+                console.log("err insert")
+                return;
+            }
+            if(err){
+                res.send(table_name)
+                console.log(table_name);
+            }else{
+                res.send(table_name)
+                db.showAll(table_name,(err,result)=>{
+                    console.log(result);
+                });
+            }
+        });
+    }
     this.addStudent = (req,res) => {
         
         db.insertStu("students",req.body.stu_id,req.body.fname,req.body.lname,req.body.email,(err,data) => { 
             console.log(data);
         });
-        // stu_id fname lname email
-
     }
 
 }

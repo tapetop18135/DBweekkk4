@@ -10,9 +10,9 @@ var router = function(app){
     app.post("/showTrascripts",admin.showTrascripts);
 
     // add Data to SQL 
-    app.post("/db/addStudent",admin.addStudent);
+    // app.post("/db/addStudent",admin.addStudent);
     // app.post("/db/addCourse",admin.addCourse);
-    // app.post("/db/addTranscript",admin.addTranscript);
+    app.post("/db/addTranscript",admin.addTranscript);
 }
 
 module.exports = router;

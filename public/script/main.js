@@ -27,9 +27,7 @@ var showCourses = () => {
         url:"/showCourses",
         data : {call:"showCourses"},
         success : (data) => {
-            // console.log(data)
             var string = str(data);
-
             $(".Courses").html(string)
             
         }
@@ -59,5 +57,5 @@ var str = (data) => {
     }
     return str
 }
-
+// mainShow();
 setInterval("mainShow()", 500);

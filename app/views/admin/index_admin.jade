@@ -5,29 +5,10 @@ block content
         span= title
    
     div(id = "container_exec")
-        h2 Add Students
-        div(id = "form_stu")
-            form(id = "form_stu_f",method ="post")
-                input(type="text",name="stu_id",placeholder = "Enter Student ID")
-                input(type="text",name="fname",placeholder = "Enter First name")
-                input(type="text",name="lname",placeholder = "Enter Last name")
-                input(type="email",name="email",placeholder = "Enter Email")
-                br
-                input(id="btn_stu",type="submit",value="Submit")
-
-        h2 Add Courses
-        div(id = "form_sub")
-            form(id = "form_sub_f")
-                input(type="text",name="sub_id",placeholder = "Enter Course ID")
-                input(type="text",name="sub_name",placeholder = "Enter Course name")
-                input(type="text",name="credits",placeholder = "Enter Credits")
-                br
-                input(id="btn_sub",type="button",value="Submit")
-
         h2 Add Transcripts
         div(id = "form_tran")
             form(id = "form_tran_f")
-                input(type="text",name="stu_id_tran",placeholder = "Enter Student ID")
+                input(type="text",id="stu_id",name="stu_id_tran",placeholder = "Enter Student ID")
                 input(type="text",name="sub_id_tran",placeholder = "Enter Course ID")
                 input(type="text",name="year",placeholder = "Enter Year")
                 input(type="text",name="semester",placeholder = "Enter semester")

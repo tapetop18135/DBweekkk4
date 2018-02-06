@@ -20,15 +20,16 @@ var kmutnbDB = function(name){
     }
     this.insert = (table,id_stu,id_sub,year,semester,gpa,comment,callback) => {
         // if(comment === undefined){comment = 'nocomment'}
-        sql = 'INSERT INTO transcripts VALUES ("'+id_stu+'","'+id_sub+'","'+year+'","'+semester+'","'+gpa+'",'+comment+')'
+        sql = 'INSERT INTO '+table+' VALUES ("'+id_stu+'","'+id_sub+'","'+year+'","'+semester+'","'+gpa+'",'+comment+')'
         db.serialize(() => {
             db.run("PRAGMA foreign_keys = ON");
             db.run(sql,(err) => {
                 if(err){
-                    console.log(err);
+                    callback(true,err);
                     return;
+                }else{
+                    callback(false,table);
                 }        
-                callback(table);
             });
         });
     }
@@ -78,14 +79,18 @@ var kmutnbDB = function(name){
 //     });
 // });
 
-// test.insert("transcripts","5801012610032","010123102","2558","1",'B',null,(table_name) => {
+// test.insert("transcripts","5801012610032","010123114","2558","1",'B','null',(err,table_name) => {
 //     if(table_name == undefined){
 //         console.log("err insert")
 //         return;
 //     }
-//     test.showAll(table_name,(err,result)=>{
-//         console.log(result);
-//     });
+//     if(err){
+//         console.log(table_name);
+//     }else{
+//         test.showAll(table_name,(err,result)=>{
+//             console.log(result);
+//         });
+//     }
 // });
 
 module.exports = kmutnbDB; 
