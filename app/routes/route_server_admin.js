@@ -11,7 +11,7 @@ var router = function(app){
 
     // add Data to SQL 
     // app.post("/db/addStudent",admin.addStudent);
-    // app.post("/db/addCourse",admin.addCourse);
+    app.post("/showAllJoin",admin.showAllJoin);
     app.post("/db/addTranscript",admin.addTranscript);
 }
 

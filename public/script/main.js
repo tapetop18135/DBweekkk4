@@ -10,13 +10,19 @@ var mainShow = () => {
 var showTrascripts = () => {
     $.ajax({
         type:"post",
-        url:"/showTrascripts",
+        url:"/showAllJoin",
         data : {call:"showTrascripts"},
         success : (data) => {
-            // str = "test"+data.length
-            var string = str(data);
+            if(data[0]){
+                console.log(data[1])
+                return
+            }else{     
+                // console.log(data[1])
+                var string = str(data[1]);
 
-            $(".transcripts").html(string)
+                $(".transcripts").html(string)
+            }
+            // str = "test"+data.length
         }
     });
 }

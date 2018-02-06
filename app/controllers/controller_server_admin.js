@@ -20,6 +20,22 @@ var controllerAdmin = function(){
         })
     }
 
+    this.showAllJoin = (req,res) => {
+        sql = "select students.stu_id , students.fname , students.lname , subjects.sub_id , subjects.sub_name , transcripts.year ,"+
+        " transcripts.semester , transcripts.gpa from ((transcripts INNER JOIN students ON transcripts.stu_id = students.stu_id) "+
+        "INNER JOIN subjects ON transcripts.sub_id = subjects.sub_id);";
+
+        db.cmdSQL((err,result) => {
+            if(err){
+                res.send([err,result]);
+                return ;
+            }else{
+                res.send([err,result]);
+            }
+        });
+
+    }
+
     this.showCourses = (req,res) => {
         if(req.body.call !== "showCourses" ) return "Err Dont call";
         db.showAll("subjects",(err,result) => {

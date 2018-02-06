@@ -33,7 +33,18 @@ var kmutnbDB = function(name){
             });
         });
     }
-
+    this.cmdSQL = (callback) => {
+        db.serialize(function() {
+            db.all(sql, function(err, result) {
+                if(err){
+                    console.log(err);
+                    callback(true,err)
+                    return;
+                }
+                callback(false,result)
+            });
+        });
+    }
     this.insertStu = (table,id_stu,fname,lname,email,callback) => {
         // if(comment === undefined){comment = 'nocomment'}
         sql = 'INSERT INTO '+table+' VALUES ("'+id_stu+'","'+fname+'","'+lname+'","'+email+'")'
@@ -64,6 +75,18 @@ var kmutnbDB = function(name){
 //     console.log(result);
 // });
 
+// sql = "select students.stu_id , students.fname , students.lname , subjects.sub_id , subjects.sub_name , transcripts.year ,"+
+// " transcripts.semester , transcripts.gpa from ((transcripts INNER JOIN students ON transcripts.stu_id = students.stu_id) "+
+// "INNER JOIN subjects ON transcripts.sub_id = subjects.sub_id);";
+
+// test.cmdSQL((err,result) => {
+//     if(err){
+//         console.log(result);
+//         return ;
+//     }else{
+//         console.log(result);
+//     }
+// });
 // test.insertStu("students","5801012610027","sadasdas","sdasdsad","asddsad",(err,data) => {
 //     console.log(err)
 //     if(err){

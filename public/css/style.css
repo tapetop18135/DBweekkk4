@@ -19,6 +19,10 @@ body {
 .studentsC{
     grid-area: studentsC;
 }
+.transcripts{
+    /* letter-spacing:  */
+    line-height: 1.5;
+}
 .coursesC{
     grid-area: coursesC;  
 }
@@ -55,9 +59,19 @@ body {
     text-align: center;
     padding: 4px; 
 }
+/* input[type=text]:focus {
+    border: 3px solid #555;
+} */
 #container_exec input[type="text"]{
     margin: 3px;
     padding: 5px;
+    border: 3px solid #aaa;
+}
+#container_exec input[type="text"]:focus{
+    margin: 3px;
+    padding: 5px;
+    border: 3px solid #000;
+    transition: border 500ms;
 }
 #container_exec input[type="button"]{
     border: 0;
