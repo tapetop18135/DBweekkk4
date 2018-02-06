@@ -33,7 +33,7 @@ var kmutnbDB = function(name){
             });
         });
     }
-    this.cmdSQL = (callback) => {
+    this.cmdSQL = (sql,callback) => {
         db.serialize(function() {
             db.all(sql, function(err, result) {
                 if(err){
@@ -71,15 +71,15 @@ var kmutnbDB = function(name){
 }
 // var test = new kmutnbDB("../../public/database/kmutnbDB.sqlite");
 
-// test.showAll("transcripts",(err,result)=>{
-//     console.log(result);
-// });
+// // test.showAll("transcripts",(err,result)=>{
+// //     console.log(result);
+// // });
 
-// sql = "select students.stu_id , students.fname , students.lname , subjects.sub_id , subjects.sub_name , transcripts.year ,"+
+// var sql = "select students.stu_id , students.fname , students.lname , subjects.sub_id , subjects.sub_name , transcripts.year ,"+
 // " transcripts.semester , transcripts.gpa from ((transcripts INNER JOIN students ON transcripts.stu_id = students.stu_id) "+
 // "INNER JOIN subjects ON transcripts.sub_id = subjects.sub_id);";
 
-// test.cmdSQL((err,result) => {
+// test.cmdSQL(sql,(err,result) => {
 //     if(err){
 //         console.log(result);
 //         return ;
