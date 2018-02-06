@@ -1,5 +1,82 @@
 body {
-    /* padding: 0;
-    margin: 0; */
-    color: brown;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-family: 'Lora', serif;
+    background: #fff;
+    /* font-family: 'Oswald', sans-serif; */
+    /* font-family: 'Lora', serif; */
+    font-family: 'Josefin Sans', sans-serif;    
 }
+
+#container_show{
+    display: grid;
+    grid-template: 
+    "transcriptsC transcriptsC" 2fr
+    "studentsC coursesC" 6fr
+    /1fr 1fr;
+}
+.studentsC{
+    grid-area: studentsC;
+}
+.coursesC{
+    grid-area: coursesC;  
+}
+.transcriptsC{
+    grid-area: transcriptsC;
+}
+/* header */
+#header{
+    text-align: center;
+}
+#header h1{
+    font-size: 45px;
+    margin-bottom: 8px; 
+    margin-top: 60px; 
+    letter-spacing: 3px;
+}
+
+/* alert */
+#alert{
+    text-align: center;
+    display: none;
+    margin: 0;
+}
+.message{
+    margin: 0;
+}
+
+/* container exec */
+#container_exec h2{
+    font-size: 25px;
+}
+
+#container_exec{
+    text-align: center;
+    padding: 4px; 
+}
+#container_exec input[type="text"]{
+    margin: 3px;
+    padding: 5px;
+}
+#container_exec input[type="button"]{
+    border: 0;
+    font-size: 14px;
+    margin: 10px;
+    padding: 13px 25px;
+    background: #6A686D;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.8;
+}
+#container_exec input[type="button"]:hover{
+    transition: background 500ms;
+    background: #6FE991;
+}
+
+/*  studentsC  */
+.studentsC,.coursesC,.transcriptsC{
+    text-align: center;
+    font-size: 18px;
+}
+

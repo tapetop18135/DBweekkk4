@@ -1,8 +1,9 @@
 extends admin_layout
 
 block content
-    h1 Welcome 
-        span= title
+    div(id = "header")
+        h1 Welcome 
+            span= title
    
     div(id = "container_exec")
         h2 Add Transcripts
@@ -16,16 +17,21 @@ block content
                 input(type="text",name="comment",placeholder = "Enter Comment")
                 br
                 input(id="btn_tran",type="button",value="Submit")
-
+    div(id = "alert")
+        h4(class= "message") test
     div(id = "container_show")
-        h2 Sutdents In Group
-        div(class = "students")
 
-        h2 Courses
-        div(class = "Courses")
+        div(class="studentsC")
+            h2 Sutdents In Group
+            div(class = "students")
 
-        h2 Transcripts student
-        div(class = "transcripts")
+        div(class="coursesC")
+            h2 Courses
+            div(class = "Courses")
+
+        div(class="transcriptsC")
+            h2 Transcripts student
+            div(class = "transcripts")
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="./script/main.js")

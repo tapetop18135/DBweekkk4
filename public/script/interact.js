@@ -2,12 +2,6 @@
 
 var mainInteractive = () => {
 
-    // $("#btn_stu").click((event) => {
-    //     btn_addStudent();
-    // });
-    // $("#btn_sub").click((event) => {
-    //     btn_addCourse();
-    // });
     $("#btn_tran").click((event) => {
         event.preventDefault();
         btn_addTranscript();
@@ -32,6 +26,24 @@ var btn_addTranscript = () => {
         data : $("#form_tran_f").serialize(),
         success : (data) => {
             console.log(data)
+            // $("#alert").show(1000);
+            if(data === "transcripts"){
+                $(".message").text("Insert Transcript Success").css({
+                    "color":"green",
+                    "background" : "#CFF5C3",
+                    "padding" : "10px", 
+                    "opacity" : "0.7"
+                });
+                $("#alert").show(700).delay(700).fadeOut(700);    
+            }else{
+                $(".message").text("Eror Insert Transcript").css({
+                    "color":"red",
+                    "background" : "pink",
+                    "padding" : "10px", 
+                    "opacity" : "0.7"
+                });
+                $("#alert").show(700).delay(700).fadeOut(700); 
+            }
             // if(err){
             //     console.log(data);
             // }else{
