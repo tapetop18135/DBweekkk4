@@ -1,0 +1,51 @@
+extends admin_layout
+
+block content
+    h1 Welcome 
+        span= title
+   
+    div(id = "container_exec")
+        h2 Add Students
+        div(id = "form_stu")
+            form(id = "form_stu_f",method ="post")
+                input(type="text",name="stu_id",placeholder = "Enter Student ID")
+                input(type="text",name="fname",placeholder = "Enter First name")
+                input(type="text",name="lname",placeholder = "Enter Last name")
+                input(type="email",name="email",placeholder = "Enter Email")
+                br
+                input(id="btn_stu",type="submit",value="Submit")
+
+        h2 Add Courses
+        div(id = "form_sub")
+            form(id = "form_sub_f")
+                input(type="text",name="sub_id",placeholder = "Enter Course ID")
+                input(type="text",name="sub_name",placeholder = "Enter Course name")
+                input(type="text",name="credits",placeholder = "Enter Credits")
+                br
+                input(id="btn_sub",type="button",value="Submit")
+
+        h2 Add Transcripts
+        div(id = "form_tran")
+            form(id = "form_tran_f")
+                input(type="text",name="stu_id_tran",placeholder = "Enter Student ID")
+                input(type="text",name="sub_id_tran",placeholder = "Enter Course ID")
+                input(type="text",name="year",placeholder = "Enter Year")
+                input(type="text",name="semester",placeholder = "Enter semester")
+                input(type="text",name="gpa",placeholder = "Enter GPA")
+                input(type="text",name="comment",placeholder = "Enter Comment")
+                br
+                input(id="btn_tran",type="button",value="Submit")
+
+    div(id = "container_show")
+        h2 Sutdents In Group
+        div(class = "students")
+
+        h2 Courses
+        div(class = "Courses")
+
+        h2 Transcripts student
+        div(class = "transcripts")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="./script/main.js")
+    script(src="./script/interact.js")
