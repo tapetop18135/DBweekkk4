@@ -54,14 +54,27 @@ var showStudents = () => {
 }
 
 var str = (data) => {
-    var str = "";
-    for(var i = 0 ; i < data.length ; i+= 1){
-        for(var key in data[i]){
-            str += data[i][key]+" ";
-        }
-        str += "<br>";
+    
+    var strhead = "<table><tr>"
+    console.log(data)
+    console.log(data.length)
+    for(var k in data[0]){
+        strhead += "<th>"+k+"</th>"
     }
-    return str
+
+    strhead += "</tr>"
+
+
+    for(var i = 0 ; i < data.length ; i+= 1){
+        strhead += "<tr>"
+        for(var key in data[i]){
+            strhead += "<td>"+data[i][key]+"</td>";
+        }
+        strhead += "</tr>";
+    }
+    strhead += "</table>"
+    console.log(strhead);
+    return strhead
 }
-// mainShow();
-setInterval("mainShow()", 500);
+mainShow();
+// setInterval("mainShow()", 500);

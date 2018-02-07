@@ -25,6 +25,7 @@ var controllerAdmin = function(){
         " transcripts.semester , transcripts.gpa from ((transcripts INNER JOIN students ON transcripts.stu_id = students.stu_id) "+
         "INNER JOIN subjects ON transcripts.sub_id = subjects.sub_id);";
 
+        // var sql = "select * from transcripts";
         db.cmdSQL(sql,(err,result) => {
             if(err){
                 res.send([err,result]);

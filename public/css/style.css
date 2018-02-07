@@ -93,4 +93,19 @@ body {
     text-align: center;
     font-size: 18px;
 }
-
+.transcripts,.studentsC,.coursesC{
+    text-align: center;
+}
+td,th {
+    border: 1px solid #dddddd;
+    padding: 6px;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+    /* border: ; */
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
