@@ -2,10 +2,18 @@ extends admin_layout
 
 block content
     div(id = "header")
-    
         h1 Welcome 
             span= title
-   
+    div(class ="top_menu")
+        div(class = "nenu")
+            ul
+                li(class="student_menu") 
+                    a(href="#",id="student_table") Student  table
+                li(class="course_menu") 
+                    a(href="#",id="course_table") Course  table
+                li(class="transcript_menu") 
+                    a(href="#",id="tran_table",class="active_menu") Transcript  table
+    
     div(id = "container_exec")
         h2 Add Transcripts
         div(id = "form_tran")
@@ -17,24 +25,26 @@ block content
                 input(type="text",name="gpa",placeholder = "Enter GPA")
                 input(type="text",name="comment",placeholder = "Enter Comment")
                 br
-                input(id="btn_tran",type="button",value="Submit")
+                input(id="btn_tran",type="button",value="Submit")          
     div(id = "alert")
         h4(class= "message") test
-    div(id = "container_show")
+    div(id="contaiber_data")
+        div(id="show_wheClick")
+    //- div(id = "container_show")
 
-        div(class="transcriptsC")
-            h2 Transcripts student
-            div(class = "transcripts")
+    //-     div(class="transcriptsC")
+    //-         h2 Transcripts student
+    //-         div(class = "transcripts")
             
-        div(class="studentsC")
-            h2 Sutdents In Group
-            div(class = "students")
+    //-     div(class="studentsC")
+    //-         h2 Sutdents In Group
+    //-         div(class = "students")
 
-        div(class="coursesC")
-            h2 Courses
-            div(class = "Courses")
+    //-     div(class="coursesC")
+    //-         h2 Courses
+    //-         div(class = "Courses")
 
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-    script(src="./script/main.js")
+    //- script(src="./script/main.js")
     script(src="./script/interact.js")

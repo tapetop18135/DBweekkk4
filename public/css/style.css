@@ -8,7 +8,9 @@ body {
     /* font-family: 'Lora', serif; */
     font-family: 'Josefin Sans', sans-serif;    
 }
-
+#contaiber_data{
+    text-align: center;
+}
 #container_show{
     display: grid;
     grid-template: 
@@ -39,6 +41,48 @@ body {
     margin-top: 60px; 
     letter-spacing: 3px;
 }
+/* side menu */
+
+.top_menu{
+    /* text-align: center; */
+    left: 0;
+    top: 0;
+    background: #000;
+    width: 100%;
+    opacity: 0.8;
+    text-align: center;
+}
+.top_menu ul{
+    padding: 20px;
+    list-style: none;
+}
+.top_menu li {
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline;
+    border-right: 1px solid #fff;
+    padding: 5px 40px;  
+    letter-spacing: 2px;
+}
+.top_menu li:last-child{
+    display: inline;
+    border-right: 0;
+}
+
+.top_menu .nenu a{
+    color: #fff;
+    text-decoration: none;
+}
+.top_menu .nenu a.active_menu{
+    color: #7FE991;
+}
+.top_menu a:hover{
+    color: #7FE991;
+    /* text-decoration: underline; */
+    transition: color  300ms ;
+}
+
+
 
 /* alert */
 #alert{
@@ -86,6 +130,7 @@ body {
 #container_exec input[type="button"]:hover{
     transition: background 500ms;
     background: #6FE991;
+    cursor: pointer;
 }
 
 /*  studentsC  */

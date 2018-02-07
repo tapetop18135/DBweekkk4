@@ -1,9 +1,9 @@
 "use strict";
 var mainShow = () => {  
     
-    showStudents();
-    showTrascripts();
-    showCourses();
+    // showStudents();
+    // showTrascripts();
+    // showCourses();
 
 }
 
@@ -56,8 +56,6 @@ var showStudents = () => {
 var str = (data) => {
     
     var strhead = "<table><tr>"
-    console.log(data)
-    console.log(data.length)
     for(var k in data[0]){
         strhead += "<th>"+k+"</th>"
     }
@@ -73,7 +71,6 @@ var str = (data) => {
         strhead += "</tr>";
     }
     strhead += "</table>"
-    console.log(strhead);
     return strhead
 }
 mainShow();
