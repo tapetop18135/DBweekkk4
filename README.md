@@ -9,3 +9,4 @@ run command
 if code dont work : Because you dont have package name sqlite3 you just run cmd
   - npm install sqlite3
   
+Deplpoy to heroku link_web : https://week4database.herokuapp.com/
